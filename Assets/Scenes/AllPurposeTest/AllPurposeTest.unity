@@ -536,7 +536,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -692,14 +692,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fac9b94c2d3a1e944871d1394e22a6be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 1.5
-  stoppingDistance: 0.5
   handTransform: {fileID: 1066243692}
-  currentItem: {fileID: 1117281084}
-  pickupRange: 2
+  currentItem: {fileID: 0}
   itemLayer:
     serializedVersion: 2
     m_Bits: 1073741824
+  pickupRange: 2
   maxAngle: 60
 --- !u!1 &1763716304
 GameObject:
@@ -925,28 +923,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba092644c8c441489597b5b77afe9ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  mountButton: {fileID: 0}
-  dismountButton: {fileID: 0}
-  confirmButton: {fileID: 0}
-  requirementsText: {fileID: 0}
-  messageText: {fileID: 0}
-  messageDisplayDuration: 0.5
-  fadeDuration: 0.25
-  maxTameableAnimals: 14
-  tamedAnimalCount: 0
-  playerSpeed: 1.5
-  followPoints: []
-  animalSlots: []
-  currentAnimalSlot: {animal: {fileID: 0}, isTamed: 0, isCanRide: 1, inRide: 0, tamingRequirements: []
-, givePoint: {fileID: 0}, animalFollowSpeed: 2, followDistance: 2, maxFollowDistance: 10, maxAnimalProximity: 2, followPoint: {fileID: 0}, isminFlyingHeight: 0, isFlyingAnimal: 0, minFlyingHeight: 5, animalNavMeshAgent: {fileID: 0}}
-  tamedAnimalSlot: {animal: {fileID: 0}, isTamed: 0, isCanRide: 1, inRide: 0, tamingRequirements: []
-, givePoint: {fileID: 0}, animalFollowSpeed: 2, followDistance: 2, maxFollowDistance: 10, maxAnimalProximity: 2, followPoint: {fileID: 0}, isminFlyingHeight: 0, isFlyingAnimal: 0, minFlyingHeight: 5, animalNavMeshAgent: {fileID: 0}}
-  playerAnimator: {fileID: 0}
-  playerController: {fileID: 0}
-  playerNavMeshAgent: {fileID: 0}
-  isMovingToGivePoint: 0
-  haveItems: 0
 --- !u!114 &2144350130
 MonoBehaviour:
   m_ObjectHideFlags: 0
