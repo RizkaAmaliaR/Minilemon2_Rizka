@@ -28,27 +28,23 @@ public class PickupItem : MonoBehaviour
         CheckForNearbyItems();
     }
 
-    // Detect nearby gameobjects with layer "Pickable"
+    // Detect nearby gameobjects with correct layer
     void CheckForNearbyItems()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, pickupRange, itemLayer);
+        Collider[] hitColliders = Physics.OverlapCapsule(
+            transform.position + Vector3.up * 1.0f,
+            transform.position + Vector3.down * 1.0f,
+            pickupRange, itemLayer
+        );
         nearbyItem = null;
-
-        float minDistance = float.MaxValue;
-        float maxDotProduct = -1.0f; // Ubah menjadi -1 untuk menjamin prioritas pada item yang lebih lurus
-
         foreach (Collider collider in hitColliders)
         {
-            float distance = Vector3.Distance(transform.position, collider.transform.position);
-            if (distance < minDistance)
+            Vector3 direction = collider.transform.position - transform.position;
+            float angle = Vector3.Angle(transform.forward, direction);
+
+            if (angle < maxAngle)
             {
-                float dotProduct = Vector3.Dot(transform.forward, collider.transform.position - transform.position);
-                if (dotProduct > maxDotProduct)
-                {
-                    nearbyItem = collider.gameObject;
-                    minDistance = distance;
-                    maxDotProduct = dotProduct;
-                }
+                nearbyItem = collider.gameObject;
             }
         }
     }
@@ -69,6 +65,11 @@ public class PickupItem : MonoBehaviour
         else if (currentItem != null)
         {
             currentItem.transform.parent = null;
+            if (Physics.Raycast(currentItem.transform.position, Vector3.down, out RaycastHit hit, 2f, LayerMask.GetMask("Ground")))
+            {
+                currentItem.transform.position = hit.point;
+                currentItem.transform.rotation = Quaternion.identity;
+            }
             currentItem = null;
 
             animator.SetBool("IsHoldingItem", false);
