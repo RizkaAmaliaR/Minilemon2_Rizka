@@ -8,13 +8,13 @@ public class PickupItem : MonoBehaviour
     Animator animator;  // Assuming you have an Animator for handling animations
 
     [Header("Player Item Pickup")]
-    public Transform handTransform;
-    public GameObject currentItem;
-    public LayerMask itemLayer;
+    [SerializeField] Transform handTransform;
+    [SerializeField] Transform headTransform;
+    [SerializeField] LayerMask itemLayer;
 
-    [Min(0)] public float pickupRange;
-    [Min(0)] public float maxAngle = 60f;
+    [SerializeField, Min(0)] float pickupRange = 5f;
 
+    GameObject currentItem;
     GameObject nearbyItem;
 
     void Awake()
@@ -31,21 +31,22 @@ public class PickupItem : MonoBehaviour
     // Detect nearby gameobjects with correct layer
     void CheckForNearbyItems()
     {
-        Collider[] hitColliders = Physics.OverlapCapsule(
-            transform.position + Vector3.up * 1.0f,
-            transform.position + Vector3.down * 1.0f,
-            pickupRange, itemLayer
+        RaycastHit hit;
+        Physics.Raycast(
+            new Ray(headTransform.position, Camera.main.transform.forward),
+            out hit,
+            pickupRange,
+            itemLayer,
+            QueryTriggerInteraction.Collide
         );
-        nearbyItem = null;
-        foreach (Collider collider in hitColliders)
-        {
-            Vector3 direction = collider.transform.position - transform.position;
-            float angle = Vector3.Angle(transform.forward, direction);
 
-            if (angle < maxAngle)
-            {
-                nearbyItem = collider.gameObject;
-            }
+        if (hit.collider != null)
+        {
+            nearbyItem = hit.collider.gameObject;
+        }
+        else
+        {
+            nearbyItem = null;
         }
     }
 
