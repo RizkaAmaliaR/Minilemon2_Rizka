@@ -703,6 +703,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1073741824
   pickupRange: 5
+  pickupAngle: 45
 --- !u!1 &1763716304
 GameObject:
   m_ObjectHideFlags: 0

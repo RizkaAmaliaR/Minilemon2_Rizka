@@ -1,26 +1,22 @@
 using UnityEngine;
-using UnityEngine.UI;
-using MalbersAnimations.Controller;
+using UnityEngine.UIElements;
 
 public class PickupItem : MonoBehaviour
 {
-    MAnimal playerController;
-    Animator animator;  // Assuming you have an Animator for handling animations
-
     [Header("Player Item Pickup")]
     [SerializeField] Transform handTransform;
     [SerializeField] Transform headTransform;
     [SerializeField] LayerMask itemLayer;
 
     [SerializeField, Min(0)] float pickupRange = 5f;
+    [SerializeField, Range(0, 45)] float pickupAngle = 30f;
 
     GameObject currentItem;
     GameObject nearbyItem;
 
     void Awake()
     {
-        playerController = GetComponent<MAnimal>();
-        animator = GetComponent<Animator>();
+
     }
 
     void Update()
@@ -31,16 +27,29 @@ public class PickupItem : MonoBehaviour
     // Detect nearby gameobjects with correct layer
     void CheckForNearbyItems()
     {
-        RaycastHit hit;
+        Vector3 playerForward = transform.forward;
+        
+        // Ignore Y Axis
+        Vector3 cameraForward = new(
+            Camera.main.transform.forward.x,
+            0,
+            Camera.main.transform.forward.z
+        );
+
+        // Cast Ray
         Physics.Raycast(
             new Ray(headTransform.position, Camera.main.transform.forward),
-            out hit,
+            out RaycastHit hit,
             pickupRange,
             itemLayer,
             QueryTriggerInteraction.Collide
         );
 
-        if (hit.collider != null)
+        // Angle between player's direction and camera's direction
+        float angle = Vector3.Angle(playerForward, cameraForward);
+        Debug.Log(angle);
+
+        if (hit.collider != null && angle <= pickupAngle)
         {
             nearbyItem = hit.collider.gameObject;
         }
@@ -59,11 +68,13 @@ public class PickupItem : MonoBehaviour
             nearbyItem = null;
             currentItem.transform.position = handTransform.position;
             currentItem.transform.parent = handTransform;
-
-            animator.SetBool("IsHoldingItem", true);
         }
+    }
 
-        else if (currentItem != null)
+    // Dropping item
+    public void OnDrop()
+    {
+        if (currentItem != null)
         {
             currentItem.transform.parent = null;
             if (Physics.Raycast(currentItem.transform.position, Vector3.down, out RaycastHit hit, 2f, LayerMask.GetMask("Ground")))
@@ -72,8 +83,6 @@ public class PickupItem : MonoBehaviour
                 currentItem.transform.rotation = Quaternion.identity;
             }
             currentItem = null;
-
-            animator.SetBool("IsHoldingItem", false);
         }
     }
 }
