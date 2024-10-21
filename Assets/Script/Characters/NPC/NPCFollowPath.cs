@@ -25,4 +25,20 @@ public class NPCFollowPath : MonoBehaviour
             pathIndex = (pathIndex + 1) % path.Length;
         }
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            animator.SetBool("ReachedByPlayer", true);
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            animator.SetBool("ReachedByPlayer", false);
+        }
+    }
 }
