@@ -11,18 +11,25 @@ public class NPCFollowPath : MonoBehaviour
 
     void OnAnimatorMove()
     {
-        transform.position = animator.rootPosition;
-        transform.LookAt(path[pathIndex].transform);
-        transform.eulerAngles.Set(0, transform.eulerAngles.y, 0);
-
-        if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 100f))
+        if (!animator.GetBool("ReachedByPlayer"))
         {
-            transform.position = new Vector3(transform.position.x, hit.point.y, transform.position.z);
+            transform.position = animator.rootPosition;
+            transform.LookAt(path[pathIndex].transform);
+            transform.eulerAngles.Set(0, transform.eulerAngles.y, 0);
+
+            if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 100f))
+            {
+                transform.position = new Vector3(transform.position.x, hit.point.y, transform.position.z);
+            }
+
+            if (Vector3.Distance(transform.position, path[pathIndex].transform.position) < 0.25f)
+            {
+                pathIndex = (pathIndex + 1) % path.Length;
+            }
         }
-
-        if (Vector3.Distance(transform.position, path[pathIndex].transform.position) < 0.25f)
+        else
         {
-            pathIndex = (pathIndex + 1) % path.Length;
+            transform.LookAt(Player.instance.transform.position);
         }
     }
 
