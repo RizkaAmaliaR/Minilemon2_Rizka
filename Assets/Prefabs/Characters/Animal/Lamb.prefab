@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4419280903900476354}
   - component: {fileID: 1506747938088060468}
   - component: {fileID: 2379213026262202341}
-  - component: {fileID: 1709299541673015557}
+  - component: {fileID: 1266706772752644052}
   - component: {fileID: 8675541113668324955}
   m_Layer: 20
   m_Name: Lamb
@@ -116,7 +116,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 8
   m_ObstacleAvoidanceType: 4
---- !u!114 &1709299541673015557
+--- !u!114 &1266706772752644052
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,10 +125,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8565782802957626676}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3659a912a78ba9a41a430daf7b4f2f9c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ac3ce3409345d64da4038bc276ba9b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstState: 0
+  firstState: 1
   player: {fileID: 0}
   agent: {fileID: 0}
   animators: []
@@ -138,8 +138,7 @@ MonoBehaviour:
   - Idle_B
   - Idle_C
   - Eat
-  randomRunAnim:
-  - Run
+  radius: 5
 --- !u!135 &8675541113668324955
 SphereCollider:
   m_ObjectHideFlags: 0
