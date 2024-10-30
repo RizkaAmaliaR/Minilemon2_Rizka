@@ -31,6 +31,7 @@ namespace AIStateMachine.Animal.Lamb
         public override void ExitState()
         {
             goPatrol = false;
+            idleTimeInterval = 0;
         }
 
         public override AnimalState GetNextState()
