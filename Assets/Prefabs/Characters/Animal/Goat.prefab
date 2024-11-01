@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 9113961877001576076}
   - component: {fileID: 3223483209816452515}
   - component: {fileID: 2897146224335557968}
-  - component: {fileID: 7491148533295396878}
   - component: {fileID: 4297234940029141592}
+  - component: {fileID: 3596347693964265225}
   m_Layer: 20
   m_Name: Goat
   m_TagString: Untagged
@@ -116,30 +116,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 8
   m_ObstacleAvoidanceType: 4
---- !u!114 &7491148533295396878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3481699920524480191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3659a912a78ba9a41a430daf7b4f2f9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firstState: 0
-  player: {fileID: 0}
-  agent: {fileID: 0}
-  animators: []
-  idleTimer: 4
-  randomIdleAnim:
-  - Idle_A
-  - Idle_B
-  - Idle_C
-  - Eat
-  randomRunAnim:
-  - Run
 --- !u!135 &4297234940029141592
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -161,6 +137,29 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3596347693964265225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3481699920524480191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac3ce3409345d64da4038bc276ba9b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstState: 1
+  player: {fileID: 0}
+  agent: {fileID: 0}
+  animators: []
+  idleTimer: 4
+  randomIdleAnim:
+  - Idle_A
+  - Idle_B
+  - Idle_C
+  - Eat
+  radius: 5
 --- !u!1001 &4985441676726324538
 PrefabInstance:
   m_ObjectHideFlags: 0
