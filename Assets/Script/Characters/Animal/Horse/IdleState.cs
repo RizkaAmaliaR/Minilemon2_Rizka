@@ -39,7 +39,7 @@ namespace AIStateMachine.Animal.Horse
 
         public override void OnTriggerStay(Collider other)
         {
-            playerRunInSight = input.sprint || input.jump;
+            playerRunInSight = other.CompareTag("Player");
         }
 
         public override void UpdateState()
