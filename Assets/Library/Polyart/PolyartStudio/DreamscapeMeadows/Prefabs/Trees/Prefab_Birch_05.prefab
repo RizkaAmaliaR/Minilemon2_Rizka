@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5194611686949468344}
   - component: {fileID: 5194611686963276830}
+  - component: {fileID: -488938456053084724}
   m_Layer: 0
   m_Name: Prefab_Birch_05
   m_TagString: Untagged
@@ -62,6 +63,28 @@ LODGroup:
     renderers:
     - renderer: {fileID: 5194611686947043930}
   m_Enabled: 1
+--- !u!64 &-488938456053084724
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5194611686949037208}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &5194611686949037210
 GameObject:
   m_ObjectHideFlags: 0
