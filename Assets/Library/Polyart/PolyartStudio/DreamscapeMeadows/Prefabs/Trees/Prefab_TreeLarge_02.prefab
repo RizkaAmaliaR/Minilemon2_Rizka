@@ -262,6 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6021622013396405485}
   - component: {fileID: 6021622013411760205}
+  - component: {fileID: -3836391141392321639}
   m_Layer: 0
   m_Name: Prefab_TreeLarge_02
   m_TagString: Untagged
@@ -319,6 +320,28 @@ LODGroup:
     renderers:
     - renderer: {fileID: 6021622013394636299}
   m_Enabled: 1
+--- !u!64 &-3836391141392321639
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6021622013396635853}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &6021622013396635855
 GameObject:
   m_ObjectHideFlags: 0
