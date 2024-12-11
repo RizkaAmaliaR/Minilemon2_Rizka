@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: Minilemon-Games
+  companyName: Minilemon Games
+  productName: Minilemon Explorer
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.12156863, g: 0.12156863, b: 0.1254902, a: 1}
@@ -669,7 +669,7 @@ PlayerSettings:
     Stadia: UNITY_POST_PROCESSING_STACK_V2
     Standalone: AQUAS_2020_PRESENT;UNITY_POST_PROCESSING_STACK_V2;GENA_PRO;MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED;__DIGGER__;CROSS_PLATFORM_INPUT
     VisionOS: UNITY_POST_PROCESSING_STACK_V2
-    WebGL: UNITY_POST_PROCESSING_STACK_V2
+    WebGL: UNITY_POST_PROCESSING_STACK_V2;AQUAS_2020_PRESENT;GENA_PRO;MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED;__DIGGER__
     Windows Store Apps: MOBILE_INPUT
     XboxOne: UNITY_POST_PROCESSING_STACK_V2
     iPhone: CROSS_PLATFORM_INPUT;MOBILE_INPUT

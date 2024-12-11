@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad7c92bcf3e61ab4b9c8d876fee66e25, type: 3}
+  m_Name: CollectItemMission
+  m_EditorClassIdentifier: 
+  <timeLimit>k__BackingField: 30
+  <item>k__BackingField: {fileID: 11400000, guid: 758f15f9ea00cf545b0105f78bccbe4b, type: 2}
+  <target>k__BackingField: 8

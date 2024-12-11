@@ -53,7 +53,16 @@
                 {
                     "name": "Drop",
                     "type": "Button",
-                    "id": "35504a59-4ff6-4843-bbbc-4194520530ca",
+                    "id": "913ae124-c88a-498c-97e9-e2f28928611c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interaction",
+                    "type": "Button",
+                    "id": "9589571b-1134-497d-a017-8da85fdf3c28",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -240,7 +249,7 @@
                 {
                     "name": "",
                     "id": "e7c7dc69-d03a-46ae-a4a1-72ddc47bca7a",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
@@ -250,12 +259,23 @@
                 },
                 {
                     "name": "",
-                    "id": "023333c0-be4c-4925-bbcd-c397ccb68d7c",
-                    "path": "<Keyboard>/q",
+                    "id": "85195f76-be45-4fe6-8908-7f5a7a212f1e",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
-                    "groups": "KeyboardMouse",
+                    "groups": "",
                     "action": "Drop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ca621a43-5814-4ed6-bd3b-a835416b8600",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interaction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
